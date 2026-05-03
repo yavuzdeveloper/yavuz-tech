@@ -29,6 +29,12 @@ const CATEGORIES = [
     color: "text-secondary",
     dot: "bg-secondary",
   },
+  {
+    key: "ai" as const,
+    label: "AI",
+    color: "text-purple",
+    dot: "bg-purple",
+  },
 ];
 
 export default function Skills() {
