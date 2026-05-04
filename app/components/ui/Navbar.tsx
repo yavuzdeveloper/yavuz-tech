@@ -9,7 +9,7 @@ import { useTheme } from "../ThemeProvider";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme(); // ✅ useTheme'i kullan
+  const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -36,12 +36,19 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#"
-            className="font-mono text-sm text-acid tracking-widest hover:opacity-70 transition-opacity"
-          >
-            {PERSONAL.name.split(" ")[0].toLowerCase()}.dev
-          </a>
+
+          <div className="flex items-center gap-2">
+            <img
+              src="/icon"
+              alt="YT Logo"
+              width={32}
+              height={32}
+              className="rounded-lg"
+            />
+            <a href="#" className="font-mono text-sm text-acid tracking-widest">
+              {PERSONAL.name.split(" ")[0].toLowerCase()}.dev
+            </a>
+          </div>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
@@ -61,7 +68,7 @@ export default function Navbar() {
             {/* Theme toggle */}
             {mounted && (
               <button
-                onClick={toggleTheme} // ✅ toggleTheme'i çağır
+                onClick={toggleTheme}
                 className="w-8 h-8 flex items-center justify-center rounded border border-border hover:border-muted text-secondary hover:text-primary transition-all"
                 aria-label="Toggle theme"
               >

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: `${getExperienceYears()}+ years building performant, scalable web applications.`,
     type: "website",
   },
+  icons: {
+    icon: "/icon", // dinamik olarak oluşturulan /icon adresini işaret eder
+  },
 };
 
 export default function RootLayout({

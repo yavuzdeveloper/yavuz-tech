@@ -17,7 +17,7 @@ export const SKILLS = {
     "React / Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "Redux / Zustand",
+    "Redux / Zustand / Context API",
     "TanStack Query",
     "Framer Motion",
     "GraphQL (Apollo)",
@@ -32,7 +32,7 @@ export const SKILLS = {
   devops: [
     "Docker",
     "AWS (Lambda, Cognito, S3, Amplify)",
-    "Vercel / Netlify",
+    "Vercel / Netlify / Redhat OpenShift",
     "GitHub Actions (CI/CD)",
     "Serverless Architecture",
   ],
