@@ -1,9 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const size = {
-  width: 64,
-  height: 64,
-};
+export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
 export default function Icon() {
@@ -15,29 +12,36 @@ export default function Icon() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#0a0b0d",
-        border: "1px solid #1e2128",
-        borderRadius: "14px",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
+        backgroundColor: "rgba(168,255,62,0.12)",
+        borderRadius: "16px",
+        padding: "3px",
       }}
     >
-      <span
+      <div
         style={{
-          fontSize: 32,
-          fontWeight: 800,
-          fontFamily: "system-ui, -apple-system, 'Syne', sans-serif",
-          letterSpacing: "-1px",
-          background: "linear-gradient(135deg, #a8ff3e 0%, #38bdf8 100%)",
-          backgroundClip: "text",
-          color: "transparent",
-          textShadow: "0 0 2px rgba(168,255,62,0.2)",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#0a0b0d",
+          borderRadius: "13px",
+          border: "2px solid #a8ff3e",
         }}
       >
-        YT
-      </span>
+        <span
+          style={{
+            fontSize: 30,
+            fontWeight: 800,
+            fontFamily: "monospace",
+            letterSpacing: "-2px",
+            color: "#a8ff3e",
+          }}
+        >
+          YT
+        </span>
+      </div>
     </div>,
-    {
-      ...size,
-    },
+    { ...size },
   );
 }

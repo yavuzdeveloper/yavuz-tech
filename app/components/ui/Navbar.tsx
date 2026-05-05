@@ -46,7 +46,7 @@ export default function Navbar() {
               className="rounded-lg"
             />
             <a href="#" className="font-mono text-sm text-acid tracking-widest">
-              {PERSONAL.name.split(" ")[0].toLowerCase()}.dev
+              {PERSONAL.name.split(" ")[0].toLowerCase()}.tech
             </a>
           </div>
 
