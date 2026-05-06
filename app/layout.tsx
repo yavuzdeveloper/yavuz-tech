@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/icon", // dinamik olarak oluşturulan /icon adresini işaret eder
+    icon: "/icon", 
   },
 };
 
