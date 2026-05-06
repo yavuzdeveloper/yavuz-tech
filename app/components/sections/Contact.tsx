@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoMdSend, IoMdMail } from "react-icons/io";
 import { FaGithub, FaLinkedin, FaArrowRight } from "react-icons/fa";
 import { PERSONAL } from "@/app/lib/data";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -128,25 +129,81 @@ export default function Contact() {
 }
 
 function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    if (status === "sent") {
+      const timer = setTimeout(() => {
+        setStatus("idle");
+        setFormData({ name: "", email: "", message: "" });
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
-    // Replace with your actual form submission logic
-    await new Promise(r => setTimeout(r, 1200));
-    setStatus("sent");
+    setErrorMsg("");
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          to_name: "Yavuz Tokus",
+          from_email: formData.email,
+          to_email: "yavuztokus2010@gmail.com",
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+      setStatus("sent");
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again later.");
+    }
   };
 
   if (status === "sent") {
     return (
-      <div className="flex flex-col items-center justify-center h-64 gap-4 border border-acid/30 rounded-lg bg-acid/5">
+      <div className="flex flex-col items-center justify-center h-64 gap-4 border border-acid/30 rounded-lg bg-acid/5 relative">
         <div className="w-12 h-12 rounded-full bg-acid/20 flex items-center justify-center">
           <IoMdSend size={20} className="text-acid" />
         </div>
         <p className="font-mono text-sm text-acid">
           Message sent — I'll be in touch soon.
         </p>
+
+        <button
+          onClick={() => {
+            setStatus("idle");
+            setFormData({ name: "", email: "", message: "" });
+          }}
+          className="mt-4 px-5 py-2 border border-acid/50 rounded-full hover:bg-acid/10 transition-all font-mono text-xs text-acid flex items-center gap-2 group"
+        >
+          <IoMdMail
+            size={14}
+            className="group-hover:scale-110 transition-transform"
+          />
+          Send another message
+        </button>
       </div>
     );
   }
@@ -174,7 +231,10 @@ function ContactForm() {
             type={type}
             placeholder={placeholder}
             required
-            className="w-full bg-surface border border-border rounded px-4 py-3 font-mono text-sm text-primary placeholder:text-tertiary focus:outline-none focus:border-acid/50 transition-colors"
+            value={formData[id as keyof typeof formData]}
+            onChange={handleChange}
+            disabled={status === "sending"}
+            className="w-full bg-surface border border-border rounded px-4 py-3 font-mono text-sm text-primary placeholder:text-tertiary focus:outline-none focus:border-acid/50 transition-colors disabled:opacity-50"
           />
         </div>
       ))}
@@ -191,9 +251,18 @@ function ContactForm() {
           rows={5}
           placeholder="Tell me about the project or opportunity..."
           required
-          className="w-full bg-surface border border-border rounded px-4 py-3 font-mono text-sm text-primary placeholder:text-tertiary focus:outline-none focus:border-acid/50 transition-colors resize-none"
+          value={formData.message}
+          onChange={handleChange}
+          disabled={status === "sending"}
+          className="w-full bg-surface border border-border rounded px-4 py-3 font-mono text-sm text-primary placeholder:text-tertiary focus:outline-none focus:border-acid/50 transition-colors resize-none disabled:opacity-50"
         />
       </div>
+
+      {status === "error" && (
+        <div className="text-red-400 font-mono text-xs bg-red-400/10 border border-red-400/30 rounded px-3 py-2">
+          {errorMsg}
+        </div>
+      )}
 
       <button
         type="submit"
