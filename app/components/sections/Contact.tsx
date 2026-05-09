@@ -49,9 +49,9 @@ export default function Contact() {
               Great.
             </h2>
             <p className="font-sans text-secondary text-lg leading-relaxed mb-10 max-w-md">
-              I'm currently open to new roles, freelance projects, and technical
-              collaborations. Whether it's a full-time position or a side
-              project — let's talk.
+              I’m open to new opportunities — full‑time roles, freelance work,
+              or technical collaborations. If you think we could build something
+              great together, feel free to reach out.
             </p>
 
             {/* Email */}

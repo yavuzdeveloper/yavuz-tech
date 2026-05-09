@@ -82,7 +82,7 @@ export default function Navbar() {
               href="#contact"
               className="hidden md:flex items-center gap-2 px-4 py-2 bg-acid text-ink font-mono text-xs font-semibold rounded hover:bg-acid/90 transition-all tracking-wide"
             >
-              Hire Me
+              Work With Me
             </a>
 
             {/* Mobile menu button */}

@@ -77,7 +77,7 @@ export default function Hero() {
           <div className="flex gap-8 md:ml-auto">
             <div className="text-center">
               <div className="font-mono text-2xl font-bold text-primary">
-                <CountUp start={0} end={PERSONAL.yearsExp} duration={3} />+
+                <CountUp start={0} end={PERSONAL.yearsExp} duration={4} />+
               </div>
               <div className="font-mono text-xs text-tertiary tracking-wide mt-1">
                 Years exp.
@@ -85,7 +85,7 @@ export default function Hero() {
             </div>
             <div className="text-center">
               <div className="font-mono text-2xl font-bold text-primary">
-                <CountUp start={0} end={50} duration={3} />+
+                <CountUp start={0} end={50} duration={4} />+
               </div>
               <div className="font-mono text-xs text-tertiary tracking-wide mt-1">
                 Projects
@@ -93,7 +93,7 @@ export default function Hero() {
             </div>
             <div className="text-center">
               <div className="font-mono text-2xl font-bold text-primary">
-                <CountUp start={0} end={99} duration={3} />%
+                <CountUp start={0} end={99.99} duration={4} />%
               </div>
               <div className="font-mono text-xs text-tertiary tracking-wide mt-1">
                 Uptime avg.
