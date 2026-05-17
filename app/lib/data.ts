@@ -51,36 +51,84 @@ export const SKILLS = {
     "Cursor AI / GitHub Copilot / Windsurf",
   ],
 };
+
 export const EXPERIENCE = [
   {
-    company: "Acme Corp",
-    role: "Senior Frontend Engineer",
-    period: "2022 — Present",
-    location: "Remote",
+    company: "Adecco UK",
+    role: "Senior Frontend Developer",
+    period: "Aug 2025 — Present",
+    location: "London, UK",
     description:
-      "Led frontend architecture for a real-time analytics platform serving 50k+ daily users. Reduced bundle size by 40% and improved Core Web Vitals scores to 95+.",
-    stack: ["React", "TypeScript", "Next.js", "GraphQL", "AWS"],
-    highlight: "40% bundle reduction",
+      "Leading development of a micro-frontend (MFE) platform for a major UK energy company. Building real-time dashboards processing live data streams while driving architecture decisions, performance, and cross-team collaboration.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Apollo Client",
+      "GraphQL",
+      "Micro Frontends",
+      "Webpack",
+      "Jest",
+      "Cypress",
+    ],
+    highlight: "Leading MFE project for major energy firm",
   },
   {
-    company: "StartupXYZ",
-    role: "Fullstack Engineer",
-    period: "2020 — 2022",
-    location: "San Francisco, CA",
-    description:
-      "Built and shipped 3 major product features end-to-end. Architected a microservices backend handling 1M+ daily requests with 99.9% uptime.",
-    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Redis"],
-    highlight: "1M+ daily requests",
-  },
-  {
-    company: "Digital Agency",
+    company: "Point Sigma",
     role: "Frontend Developer",
-    period: "2018 — 2020",
-    location: "New York, NY",
+    period: "Sep 2023 — May 2025",
+    location: "London, UK",
     description:
-      "Delivered 20+ client projects ranging from e-commerce to SaaS dashboards. Established component library used across all agency projects.",
-    stack: ["React", "JavaScript", "SCSS", "REST APIs"],
-    highlight: "20+ projects shipped",
+      "Led development of scalable React architecture by migrating Salesforce Aura/LWC components into reusable modular structures. Built performant applications using hooks and TypeScript with strong type safety. Managed global state via Context API and integrated AWS services (Cognito, Amplify, Lambda, API Gateway) for authentication and backend communication. Implemented RESTful APIs and contributed to AI-driven analytics features using LLMs. Collaborated in Agile teams and mentored junior developers.",
+    stack: [
+      "React",
+      "TypeScript",
+      "AWS",
+      "Context API",
+      "Ant Design",
+      "Chart.js",
+    ],
+    highlight: "AI-powered analytics & scalable architecture",
+  },
+
+  {
+    company: "Boutique Rugs",
+    role: "Software Development Specialist",
+    period: "Feb 2022 — Sep 2023",
+    location: "USA (Remote)",
+    description:
+      "Developed large-scale product management interfaces handling thousands of items using React and Next.js. Managed complex state with Redux Toolkit and integrated GraphQL (Apollo Client) and REST APIs. Built performant and responsive admin dashboards and contributed to improved UX and maintainability.",
+    stack: [
+      "React",
+      "Next.js",
+      "Redux Toolkit",
+      "GraphQL",
+      "Apollo",
+      "PHP",
+      "Node.js",
+    ],
+    highlight: "Scalable product systems (100k+ items)",
+  },
+
+  {
+    company: "T-Con",
+    role: "Frontend Developer",
+    period: "Dec 2020 — Feb 2022",
+    location: "London, UK",
+    description:
+      "Modernized legacy frontend architecture by migrating class-based components to hooks-based React with TypeScript. Built reusable UI components and integrated RESTful APIs for CRUD operations. Focused on maintainability, clean architecture, and scalable UI design.",
+    stack: ["React", "TypeScript", "Styled Components"],
+    highlight: "Migration to modern React architecture",
+  },
+
+  {
+    company: "Freelance",
+    role: "Web Developer",
+    period: "Jul 2018 — Dec 2020",
+    location: "Turkey",
+    description:
+      "Delivered 10+ full-stack web applications using PHP, Laravel, and MySQL. Built dynamic, responsive interfaces and integrated third-party APIs. Focused on performance optimization, cross-browser compatibility, and long-term maintainability.",
+    stack: ["PHP", "Laravel", "MySQL", "JavaScript"],
+    highlight: "10+ production projects delivered",
   },
 ];
 
@@ -126,6 +174,46 @@ export const PROJECTS = [
     year: "2022",
   },
 ];
+
+// export const PROJECTS2 = [
+//   {
+//     title: "Real-time Energy Analytics Dashboard",
+//     description:
+//       "Designed and developed a real-time analytics dashboard processing live data streams for an energy sector client. Focused on performance, scalability, and modular micro-frontend architecture.",
+//     stack: [
+//       "React",
+//       "TypeScript",
+//       "GraphQL",
+//       "Apollo Client",
+//       "WebSockets",
+//       "Micro Frontends",
+//     ],
+//     github: null,
+//     live: null,
+//     featured: true,
+//     year: "2025",
+//   },
+//   {
+//     title: "Product Management Platform",
+//     description:
+//       "Built a scalable product management system handling 100k+ items with advanced filtering, real-time updates, and optimized state management using Redux Toolkit and GraphQL.",
+//     stack: ["React", "Next.js", "Redux Toolkit", "GraphQL", "Apollo Client"],
+//     github: null,
+//     live: null,
+//     featured: true,
+//     year: "2023",
+//   },
+//   {
+//     title: "Real-time Collaboration Engine",
+//     description:
+//       "Developed a low-latency collaborative editing system using WebSockets, enabling real-time multi-user interactions with conflict resolution and efficient state synchronization.",
+//     stack: ["React", "Node.js", "WebSockets", "Redis"],
+//     github: "https://github.com/your-username/realtime-collab",
+//     live: "https://your-demo-link.com",
+//     featured: false,
+//     year: "2024",
+//   },
+// ];
 
 export const NAV_ITEMS = [
   { label: "Work", href: "#work" },
