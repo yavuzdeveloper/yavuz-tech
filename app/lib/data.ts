@@ -70,7 +70,7 @@ export const EXPERIENCE = [
       "Jest",
       "Cypress",
     ],
-    highlight: "Leading MFE project for major energy firm",
+    highlight: "Leading MFE for UK energy",
   },
   {
     company: "Point Sigma",
@@ -87,7 +87,7 @@ export const EXPERIENCE = [
       "Ant Design",
       "Chart.js",
     ],
-    highlight: "AI-powered analytics & scalable architecture",
+    highlight: "AI-powered analytics",
   },
 
   {
@@ -106,7 +106,7 @@ export const EXPERIENCE = [
       "PHP",
       "Node.js",
     ],
-    highlight: "Scalable product systems (100k+ items)",
+    highlight: "100k+ scale system",
   },
 
   {
@@ -117,7 +117,7 @@ export const EXPERIENCE = [
     description:
       "Modernized legacy frontend architecture by migrating class-based components to hooks-based React with TypeScript. Built reusable UI components and integrated RESTful APIs for CRUD operations. Focused on maintainability, clean architecture, and scalable UI design.",
     stack: ["React", "TypeScript", "Styled Components"],
-    highlight: "Migration to modern React architecture",
+    highlight: "Legacy → modern React",
   },
 
   {
@@ -128,7 +128,7 @@ export const EXPERIENCE = [
     description:
       "Delivered 10+ full-stack web applications using PHP, Laravel, and MySQL. Built dynamic, responsive interfaces and integrated third-party APIs. Focused on performance optimization, cross-browser compatibility, and long-term maintainability.",
     stack: ["PHP", "Laravel", "MySQL", "JavaScript"],
-    highlight: "10+ production projects delivered",
+    highlight: "10+ shipped projects",
   },
 ];
 
