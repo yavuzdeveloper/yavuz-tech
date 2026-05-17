@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS, PERSONAL } from "@/app/lib/data";
 import { useTheme } from "../ThemeProvider";
 
+const workWithMeText = "Work With Me";
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -82,7 +84,7 @@ export default function Navbar() {
               href="#contact"
               className="hidden md:flex items-center gap-2 px-4 py-2 bg-acid text-ink font-mono text-xs font-semibold rounded hover:bg-acid/90 transition-all tracking-wide"
             >
-              Work With Me
+              {workWithMeText}
             </a>
 
             {/* Mobile menu button */}
@@ -128,7 +130,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 self-start px-6 py-3 bg-acid text-ink font-mono text-sm font-semibold rounded"
               >
-                Hire Me
+                {workWithMeText}
               </motion.a>
             </div>
           </motion.div>
